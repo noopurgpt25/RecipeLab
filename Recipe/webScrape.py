@@ -10,8 +10,8 @@ import re
 # Scraping Categories
 
 def scrape_recipe_info():
-    #res = requests.get("https://www.allrecipes.com/recipe/260463/italian-chicken-cacciatore/?internalSource=rotd&referringContentType=home%20page&clickId=cardslot%201")
-    res = requests.get("https://www.allrecipes.com/recipe/244195/italian-portuguese-meat-loaf-fusion/?internalSource=previously%20viewed&referringContentType=home%20page&clickId=cardslot%205")
+    res = requests.get("https://www.allrecipes.com/recipe/260463/italian-chicken-cacciatore/?internalSource=rotd&referringContentType=home%20page&clickId=cardslot%201")
+    #res = requests.get("https://www.allrecipes.com/recipe/244195/italian-portuguese-meat-loaf-fusion/?internalSource=previously%20viewed&referringContentType=home%20page&clickId=cardslot%205")
     #res = requests.get("https://www.allrecipes.com/recipe/262608/cypriot-tahini-pies-with-orange-flavor/?internalSource=staff%20pick&referringContentType=home%20page&clickId=cardslot%2017")
     content = res.content
     soup = BeautifulSoup(content, 'lxml')
@@ -52,7 +52,11 @@ def scrape_recipe_info():
                     if(splitString[i][-1]==")"):
                         newMes=newMes+" "+splitString[i]
                         splitString.remove(splitString[i])
-                        temp_dict['amount_type']=newMes
+                        if splitString[i] in measurements:
+                            temp_dict['amount_type']=newMes+" "+splitString[i]
+                            splitString.remove(splitString[i])
+                        else:
+                            temp_dict['amount_type']=newMes
                         break
                     else:
                         newMes=newMes+" "+splitString[i]
@@ -89,8 +93,8 @@ def scrape_recipe_info():
     return ingredientDiction
 
 def scrape_preperation_info():
-    #res = requests.get("https://www.allrecipes.com/recipe/260463/italian-chicken-cacciatore/?internalSource=rotd&referringContentType=home%20page&clickId=cardslot%201")
-    res = requests.get("https://www.allrecipes.com/recipe/244195/italian-portuguese-meat-loaf-fusion/?internalSource=previously%20viewed&referringContentType=home%20page&clickId=cardslot%205")
+    res = requests.get("https://www.allrecipes.com/recipe/260463/italian-chicken-cacciatore/?internalSource=rotd&referringContentType=home%20page&clickId=cardslot%201")
+    #res = requests.get("https://www.allrecipes.com/recipe/244195/italian-portuguese-meat-loaf-fusion/?internalSource=previously%20viewed&referringContentType=home%20page&clickId=cardslot%205")
     #res = requests.get("https://www.allrecipes.com/recipe/262608/cypriot-tahini-pies-with-orange-flavor/?internalSource=staff%20pick&referringContentType=home%20page&clickId=cardslot%2017")
     content = res.content
     soup = BeautifulSoup(content, 'lxml')
