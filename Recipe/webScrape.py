@@ -12,8 +12,7 @@ import re
 def scrape_recipe_info():
     #res = requests.get("https://www.allrecipes.com/recipe/260463/italian-chicken-cacciatore/?internalSource=rotd&referringContentType=home%20page&clickId=cardslot%201")
     res = requests.get("https://www.allrecipes.com/recipe/244195/italian-portuguese-meat-loaf-fusion/?internalSource=previously%20viewed&referringContentType=home%20page&clickId=cardslot%205")
-    # print(res.status_code)
-    # print(res.headers)
+    #res = requests.get("https://www.allrecipes.com/recipe/262608/cypriot-tahini-pies-with-orange-flavor/?internalSource=staff%20pick&referringContentType=home%20page&clickId=cardslot%2017")
     content = res.content
     soup = BeautifulSoup(content, 'lxml')
     counter=1
@@ -33,8 +32,19 @@ def scrape_recipe_info():
         temp_dict={}
         splitString=tempIng.split()
         if (splitString[0][0].isdigit()):
+            if (splitString[1][0].isdigit()):
+                holder= splitString[1].split("/");
+                temp_num= float(holder[0])/float(holder[1]);
+                temp_dict['amount']=int(splitString[0])+ temp_num;
+                splitString.remove(splitString[0]);
+            else:
+                holder= splitString[0].split("/");
+                if (len(holder)>1):
+                    temp_dict['amount']=float(holder[0])/float(holder[1]);
+                else:
+                    temp_dict['amount']=int(holder[0]);
             if (splitString[1][0]=="("):
-                newMes=splitString[0]+' '+splitString[1]
+                newMes=splitString[1]
                 i=0
                 splitString.remove(splitString[0])
                 splitString.remove(splitString[0])
@@ -42,24 +52,26 @@ def scrape_recipe_info():
                     if(splitString[i][-1]==")"):
                         newMes=newMes+" "+splitString[i]
                         splitString.remove(splitString[i])
-                        temp_dict['amount']=newMes
+                        temp_dict['amount_type']=newMes
                         break
                     else:
                         newMes=newMes+" "+splitString[i]
                         splitString.remove(splitString[i])
             elif (splitString[1] in measurements):
-                newMes=splitString[0]+' '+splitString[1]
+                newMes=splitString[1]
                 splitString.remove(splitString[0])
                 splitString.remove(splitString[0])
-                temp_dict['amount']=newMes
+                temp_dict['amount_type']=newMes
             else:
-                temp_dict['amount']=splitString[0]
                 splitString.remove(splitString[0])
         else:
             for item in splitString:
                 if item in measurements:
-                    if item=="taste":
-                        temp_dict['amount']="to taste"
+                    if item=="a":
+                        temp_dict['amount']=1
+                        splitString.remove(item)
+                    elif item=="taste":
+                        temp_dict['amount_type']="to taste"
                         splitString.remove(item)
                         splitString.remove("to")
         for item in splitString:
@@ -79,6 +91,7 @@ def scrape_recipe_info():
 def scrape_preperation_info():
     #res = requests.get("https://www.allrecipes.com/recipe/260463/italian-chicken-cacciatore/?internalSource=rotd&referringContentType=home%20page&clickId=cardslot%201")
     res = requests.get("https://www.allrecipes.com/recipe/244195/italian-portuguese-meat-loaf-fusion/?internalSource=previously%20viewed&referringContentType=home%20page&clickId=cardslot%205")
+    #res = requests.get("https://www.allrecipes.com/recipe/262608/cypriot-tahini-pies-with-orange-flavor/?internalSource=staff%20pick&referringContentType=home%20page&clickId=cardslot%2017")
     content = res.content
     soup = BeautifulSoup(content, 'lxml')
     preperation = []
