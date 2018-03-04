@@ -9,8 +9,8 @@ import re
 
 # Scraping Categories
 
-def scrape_recipe_info():
-    res = requests.get("https://www.allrecipes.com/recipe/260463/italian-chicken-cacciatore/?internalSource=rotd&referringContentType=home%20page&clickId=cardslot%201")
+def scrape_recipe_info(link):
+    res = requests.get(link)
     #res = requests.get("https://www.allrecipes.com/recipe/244195/italian-portuguese-meat-loaf-fusion/?internalSource=previously%20viewed&referringContentType=home%20page&clickId=cardslot%205")
     #res = requests.get("https://www.allrecipes.com/recipe/262608/cypriot-tahini-pies-with-orange-flavor/?internalSource=staff%20pick&referringContentType=home%20page&clickId=cardslot%2017")
     content = res.content
@@ -92,8 +92,8 @@ def scrape_recipe_info():
         ingredientDiction.append(temp_dict)
     return ingredientDiction
 
-def scrape_preperation_info():
-    res = requests.get("https://www.allrecipes.com/recipe/260463/italian-chicken-cacciatore/?internalSource=rotd&referringContentType=home%20page&clickId=cardslot%201")
+def scrape_preperation_info(link):
+    res = requests.get(link)
     #res = requests.get("https://www.allrecipes.com/recipe/244195/italian-portuguese-meat-loaf-fusion/?internalSource=previously%20viewed&referringContentType=home%20page&clickId=cardslot%205")
     #res = requests.get("https://www.allrecipes.com/recipe/262608/cypriot-tahini-pies-with-orange-flavor/?internalSource=staff%20pick&referringContentType=home%20page&clickId=cardslot%2017")
     content = res.content
