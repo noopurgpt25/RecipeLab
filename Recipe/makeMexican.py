@@ -98,15 +98,19 @@ def makeMexican(ingredientList, preperationList):
 		for spice in mexicanIngredients:
 			newSteps = newSteps+" "+ spice+",";
 		stepCounter=0
+		check=True
 		for step in preperationList:
 			if "marinade" in step or "marinate" in step: 
 				findMarinate=step.split(".")
 				holder=[]
 				j = 0
+				
 				while j<len(findMarinate):
+					print(check)
 					holder.append(findMarinate[j])
-					if("marinade" in findMarinate[j] or "marinate" in findMarinate[j]):
+					if(check and "marinade" in findMarinate[j] or "marinate" in findMarinate[j]):
 						holder.append(newSteps)
+						check = False
 					j+=1
 				holder=" ".join(holder)
 				preperationList[stepCounter]=holder
