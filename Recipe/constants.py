@@ -1,7 +1,7 @@
 
 meats =['chicken thighs', "chicken broth","chicken wings","chicken stock", "chicken","beef stock","beef broth","beef",'pork',"salmon","veal", "chorizo","meat"]
 
-vegitarianProteins = ["tofu", "soy", "mixed vegitables", "portabelo mushrooms"]
+vegitarianProteins = ["tofu", "mixed vegitables", "portabelo mushrooms"]
 
 meatToVegDict={"chicken":"tofu","steak":"portabelo mushrooms", "chorizo":"tofu", "hot dog": "soy dog", "hamburger":"Veggie Burger", 
 			   "turkey":"soy", "veal":"tofu", "chicken thighs":"tofu","beef":"soy", "chicken broth":"vegitable broth", "chicken stock":"vegitable stock",
@@ -10,7 +10,7 @@ meatToVegDict={"chicken":"tofu","steak":"portabelo mushrooms", "chorizo":"tofu",
 
 measurements=["pound", "pounds", "cup", "cups", "ounce", "ounces", "teaspoon", "teaspoons", "tablespoons","tablespoon" ,"quart", "quarts", "pinch", "taste", "cans"]
 
-preperation=["ground","diced","chopped","minced","torn", "divided", "pitted", "beaten", "zested"]
+preperation=["ground","diced","chopped","minced","torn", "divided", "pitted", "beaten", "zested", "skinless","boneless"]
 
 unHealthItems=["salt","sugar","butter","oil", "lard"]
 
@@ -21,11 +21,12 @@ mexicanIngredients = {"ground cumin":"1 tablespoon","chipotle peppers":"2", "dri
 
 mexicanPreps = {"tortillas":"1 per person"} 
 
-nonMexicanIngredinet = ["soy sauce", "olives", "ketchup"]
+nonMexicanIngredinet = []
 
 mexicanSides ={"hot sauce", "sour cream", "cheese", "guacamole"}
 
-mexicanSubsDict={"pasta sauce":"salsa", "italian seasoning":"taco seasoning"}
+mexicanSubsDict={"pasta sauce":"salsa", "italian seasoning":"taco seasoning", "ketchup":"salsa","soy sauce":"tobasco sauce", "olives":"avocado","sesame oil":"olive oil",
+				  "asian chili garlic sauce": "siracha"}
 
 proteinsWithBones=["chicken wings", "chicken thighs"]
 

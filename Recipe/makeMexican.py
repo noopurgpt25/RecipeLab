@@ -74,13 +74,44 @@ def makeMexican(ingredientList, preperationList):
 			deboneStep=deboneStep+ " "+ food;
 		deboneStep=deboneStep+" and remove bones."
 		preperationList.insert(len(preperationList), deboneStep)
-	newSteps = "Marinate"
-	for protein in proteins:
-		newSteps= newSteps+" "+ protein+",";
-	newSteps =newSteps+" in"
-	for spice in mexicanIngredients:
-		newSteps = newSteps+" "+ spice+",";
-	newSteps=newSteps+ " for at least one hour before starting."
+	hasMarinate = False
+	for step in preperationList:
+		if "marinade" in step or "marinate" in step:
+			hasMarinate=True
+	if (len(proteins)==0):
+		newSteps = "Sprinkle"
+		for spice in mexicanIngredients:
+			newSteps = newSteps+" "+ spice+",";
+		newSteps=newSteps+ " on top of the dish for extra flavor."
+		preperationList.insert(len(preperationList), newSteps)
+	elif not hasMarinate:
+		newSteps = "Marinate"
+		for protein in proteins:
+			newSteps= newSteps+" "+ protein+",";
+		newSteps =newSteps+" in"
+		for spice in mexicanIngredients:
+			newSteps = newSteps+" "+ spice+",";
+		newSteps=newSteps+ " for at least one hour before starting."
+		preperationList.insert(3, newSteps)
+	else:
+		newSteps= "Add to marinade";
+		for spice in mexicanIngredients:
+			newSteps = newSteps+" "+ spice+",";
+		stepCounter=0
+		for step in preperationList:
+			if "marinade" in step or "marinate" in step: 
+				findMarinate=step.split(".")
+				holder=[]
+				j = 0
+				while j<len(findMarinate):
+					holder.append(findMarinate[j])
+					if("marinade" in findMarinate[j] or "marinate" in findMarinate[j]):
+						holder.append(newSteps)
+					j+=1
+				holder=" ".join(holder)
+				preperationList[stepCounter]=holder
+				break
+			stepCounter+=1
 	newPrep= "Serve in"
 	for serving in mexicanPreps:
 		newPrep = newPrep+" "+ serving;
@@ -88,7 +119,7 @@ def makeMexican(ingredientList, preperationList):
 	for side in mexicanSides:
 		newPrep = newPrep+" "+ side+",";
 	newPrep=newPrep+" on the side."
-	preperationList.insert(3, newSteps)
+	
 	preperationList.insert(len(preperationList), newPrep)
 	count = 0
 	for step in preperationList:
