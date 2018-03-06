@@ -2,17 +2,67 @@ from constants import *
 import re
 
 
-def makeMexican(ingredientList, preperationList):
+def makeMexican(ingredientList, preperationList, foodCategories):
 	proteins=[]
+
 	count=0
-	for key in mexicanIngredients:
-		for item in ingredientList:
-			name = item.get("name");
-			if bool(re.match(".(?i)*"+name+".*",str(key))):
-				count+=1
+	#Categorized as mexican no need to further look
+	if "Mexican" in foodCategories:
+		return preperationList
+	#If it is a Dessert it is completly different transformation
+	if "Desserts" in foodCategories:
+		for key in mexicanDesertIngreDict:
+			is_present=False
+			for item in ingredientList:
+				name = item.get("name");
+				if bool(re.match(".(?i)*"+name+".*",str(key))):
+					is_present=True
+					count+=1
+					break
+			if(count>=2):
+				#Has many mexican ingredients in it so probably mexican even though not categorized as such
+				return preperationList
+			if (not is_present):
+				temp_dict={};
+				temp_dict['name']=key;
+				holder=mexicanDesertIngreDict.get(key);
+				splitAmount=holder.split()
+				if (len(splitAmount)>1):
+					temp_dict['amount']=int(splitAmount[0]);
+					if splitAmount[1] in measurements:
+						temp_dict['amount_type']=splitAmount[1];
+					else:
+						i=2
+						temp_dict['notes']=splitAmount[1]
+						while (i<len(splitAmount)):
+							temp_dict['notes']=temp_dict.get('notes')+" "+splitAmount[i];
+							i+=1
+				else:
+					temp_dict['amount']=int(splitAmount[0]);
+				ingredientList.append(temp_dict)
+		newSteps="Add to mixture"
+		stepCounter=0
+		check=False
+		for item in mexicanDesertIngredient:
+			newSteps=newSteps+" "+item
+		for step in preperationList:
+			if "batter" in step or "filling" in step: 
+				findBatter=step.split(".")
+				holder=[]
+				j = 0
+				while j<len(findBatter):
+					#print(check)
+					holder.append(findBatter[j])
+					if(check and "batter" in findBatter[j] or "filling" in findBatter[j]):
+						holder.append(newSteps)
+						check = False
+					j+=1
+				holder=" ".join(holder)
+				preperationList[stepCounter]=holder
 				break
-		if(count>=2): #already a mexican dish
-			return preperationList
+			stepCounter+=1
+		return(preperationList)
+	#Not Mexican and not a desert
 	for item in ingredientList:
 		present=True;
 		name = item.get("name");
@@ -42,7 +92,7 @@ def makeMexican(ingredientList, preperationList):
 				count+=1
 				break
 		if(count>=2):
-			#already mexican
+			#Has many mexican ingredients in it so probably mexican even though not categorized as such
 			return preperationList
 		if (not is_present):
 			temp_dict={};
@@ -106,7 +156,7 @@ def makeMexican(ingredientList, preperationList):
 				j = 0
 				
 				while j<len(findMarinate):
-					print(check)
+					#print(check)
 					holder.append(findMarinate[j])
 					if(check and "marinade" in findMarinate[j] or "marinate" in findMarinate[j]):
 						holder.append(newSteps)
@@ -116,16 +166,27 @@ def makeMexican(ingredientList, preperationList):
 				preperationList[stepCounter]=holder
 				break
 			stepCounter+=1
-	newPrep= "Serve in"
-	for serving in mexicanPreps:
-		newPrep = newPrep+" "+ serving;
-	newPrep=newPrep+" with";
-	for side in mexicanSides:
-		newPrep = newPrep+" "+ side+",";
-	newPrep=newPrep+" on the side."
-	
+	isSoup=False
+	if "Soup" in foodCategories or "Stew" in foodCategories or "Soups, Stews and Chili" in foodCategories:
+		isSoup=True
+	#Can't serve soup as tacos
+	if not isSoup:
+		newPrep= "Serve in"
+		for serving in mexicanPreps:
+			newPrep = newPrep+" "+ serving;
+		newPrep=newPrep+" with";
+		for side in mexicanSides:
+			newPrep = newPrep+" "+ side+",";
+		newPrep=newPrep+" on the side."
+	if isSoup:
+		newPrep= "Sprinkle"
+		for side in mexicanSoupSides:
+			newPrep = newPrep+" "+ side+",";
+		newPrep=newPrep+" on top."
 	preperationList.insert(len(preperationList), newPrep)
 	count = 0
+
+
 	for step in preperationList:
 		newItem=step
 		for food in nonMexicanIngredinet:

@@ -1,15 +1,15 @@
 from constants import *
-import random 
 import re
 
-def makeVegitarian(ingredientList, preperationList):
-	replaced=[]
+def makeVegitarian(ingredientList, preperationList, categoryList):
+	if "Vegetarian" in categoryList or "Vegan" in categoryList:
+		return preperationList
+
 	for ingredient in ingredientList:
 		name=ingredient.get('name')
 		for meat in meats:
 			if bool(re.match(".(?i)*"+meat+".*",name)):
 				newVeg=meatToVegDict.get(meat)
-				replaced.append(meat)
 				if newVeg==None:
 					newVeg="tofu"
 				newItem=re.sub(".(?i)*"+meat,newVeg,name)

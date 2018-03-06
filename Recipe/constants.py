@@ -4,11 +4,11 @@ meats =['chicken thighs', "chicken broth","chicken wings","chicken stock", "chic
 vegitarianProteins = ["tofu", "mixed vegitables", "portabelo mushrooms"]
 
 meatToVegDict={"chicken":"tofu","steak":"portabelo mushrooms", "chorizo":"tofu", "hot dog": "soy dog", "hamburger":"Veggie Burger", 
-			   "turkey":"soy", "veal":"tofu", "chicken thighs":"tofu","beef":"soy", "chicken broth":"vegitable broth", "chicken stock":"vegitable stock",
+			   "turkey":"soy", "veal":"tofu", "chicken thighs":"tofu","beef":"soy", "chicken broth":"vegetable broth", "chicken stock":"vegetable stock",
 			   "pork":"portabelo mushrooms","salmon":"tofu","veal":"portabelo mushrooms", "meat":"non-meat", "chicken wings":"tofu", "beef stock": "vegitable stock",
 			   "beef broth":"vegitable broth"}
 
-measurements=["pound", "pounds", "cup", "cups", "ounce", "ounces", "teaspoon", "teaspoons", "tablespoons","tablespoon" ,"quart", "quarts", "pinch", "taste", "cans"]
+measurements=["pound", "pounds", "cup", "cups", "ounce", "ounces", "teaspoon", "teaspoons", "tablespoons","tablespoon" ,"quart", "quarts", "pinch", "taste", "cans", "can"]
 
 preperation=["ground","diced","chopped","minced","torn", "divided", "pitted", "beaten", "zested", "skinless","boneless"]
 
@@ -23,14 +23,20 @@ mexicanPreps = {"tortillas":"1 per person"}
 
 nonMexicanIngredinet = []
 
-mexicanSides ={"hot sauce", "sour cream", "cheese", "guacamole"}
+mexicanDesertIngredient=["coconut", "cinnamon","coffee grounds"]
 
-mexicanSubsDict={"pasta sauce":"salsa", "italian seasoning":"taco seasoning", "ketchup":"salsa","soy sauce":"tobasco sauce", "olives":"avocado","sesame oil":"olive oil",
-				  "asian chili garlic sauce": "siracha"}
+mexicanDesertIngreDict= {"coconut flakes":"1 tablespoon","ground cinnamon":"1 tablespoon","coffe grounds":"1 teaspoon"}
+
+mexicanSides =["hot sauce", "sour cream", "cheese", "guacamole"]
+
+mexicanSoupSides= ["cheese", "cilantro","crushed tortilla chips"]
+
+mexicanSubsDict={"pasta sauce":"salsa", "italian seasoning":"taco seasoning", "ketchup":"salsa","soy sauce":"tabasco sauce", "olives":"avocado","sesame oil":"olive oil",
+				  "asian chili garlic sauce": "sriracha"}
 
 proteinsWithBones=["chicken wings", "chicken thighs"]
 
-soups=["chicken broth", "chickn stock", "beef broth", "beef stock", "vegitable stock", "vegitable broth"]
+soups=["chicken broth", "chickn stock", "beef broth", "beef stock", "vegitable stock", "vegetable broth"]
 
 tools=["pot", "tablespoons", "frying pan", "skillet", "lid", "skimmer", "oven", "bowl", "knife", "fork", "butter knife","grinder","griller", "grater", "oven mitts", "oven gloves", "plates"]
 

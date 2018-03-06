@@ -79,8 +79,9 @@ def scrape_recipe_info(link):
                         splitString.remove(item)
                         splitString.remove("to")
         for item in splitString:
-            if item in preperation:
-                temp_dict['preperation']=item
+            temp=item.replace(",","")
+            if temp in preperation:
+                temp_dict['preperation']=temp
                 splitString.remove(item)
         name=" ".join(splitString)
         nameSplit=name.split(',')
@@ -119,3 +120,15 @@ def scrape_preperation_info(link):
                     else:
                         preperation.append(step)
     return preperation
+
+
+def scrape_categories_info(link):
+    res = requests.get(link)
+    content = res.content
+    soup = BeautifulSoup(content, 'lxml')
+    element = soup.find_all("meta",  itemprop="recipeCategory")
+    # element =element.find_all(text="content")
+    categories=[]
+    for item in element:
+        categories.append(item["content"])
+    return(categories)
