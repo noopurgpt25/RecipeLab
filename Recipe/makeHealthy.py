@@ -19,10 +19,33 @@ def makeHealth(ingredientList, preperationList):
 	count=0
 	for step in preperationList:
 		newItem=step
-		print(step)
 		for meat in readMeats:
 			newItem=newItem.replace(meat, "chicken")
 		preperationList[count]=newItem
 		#print(preperationList[count])
 		count+=1
+	return preperationList
+
+
+def makeUnhealthy(ingredientList, preperationList):
+	for ingredient in ingredientList:
+		name=ingredient.get('name')
+		for item in healthierItems:
+			if bool(re.match(".(?i)*"+item+".*",name)):
+				ingredient['name']="lard"
+	for ingredient in ingredientList:
+		name=ingredient.get('name')
+		for item in unHealthItems:
+			if bool(re.match(".(?i)*"+item+".*",name)):
+				if "amount" in ingredient:
+					ingredient["amount"]= ingredient.get("amount")*2
+					break
+	count=0
+	for step in preperationList:
+			newItem=step
+			for food in unHealthItems:
+				newItem=newItem.replace(food, "lard")
+
+			preperationList[count]=newItem
+			count+=1
 	return preperationList

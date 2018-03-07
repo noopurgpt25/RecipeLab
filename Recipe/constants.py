@@ -13,7 +13,9 @@ measurements=["pound", "pounds", "cup", "cups", "ounce", "ounces", "teaspoon", "
 
 preperation=["ground","diced","chopped","minced","torn", "divided", "pitted", "beaten", "zested", "skinless","boneless"]
 
-unHealthItems=["salt","sugar","butter","oil", "lard"]
+unHealthItems=["salt","sugar","butter","olive oil", "vegetable oil", "lard"]
+
+healthierItems=["vegetable oil", "olive oil", "peanut oil", "sesame oil", "oil"]
 
 readMeats = ["beef", "pork", "steak", "pork", "chorizo", "veal"]
 
