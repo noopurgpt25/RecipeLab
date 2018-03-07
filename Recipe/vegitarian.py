@@ -4,7 +4,6 @@ import re
 def makeVegitarian(ingredientList, preperationList, categoryList):
 	if "Vegetarian" in categoryList or "Vegan" in categoryList:
 		return preperationList
-
 	for ingredient in ingredientList:
 		name=ingredient.get('name')
 		for meat in meats:
@@ -20,6 +19,8 @@ def makeVegitarian(ingredientList, preperationList, categoryList):
 		newItem=step
 		for meat in meats:
 			newVeg=meatToVegDict.get(meat)
+			if newVeg==None:
+				newVeg="tofu"
 			#print(meat)
 			newItem=newItem.replace(meat, newVeg)
 
@@ -32,4 +33,49 @@ def makeVegitarian(ingredientList, preperationList, categoryList):
 		#print(preperationList[count])
 		count+=1
 	return preperationList
+
+def makeNonVegitarian(ingredientList, preperationList, categoryList):
+	hasMeat=False
+	if "Vegetarian" in categoryList: 
+		categoryList.remove("Vegetarian")
+	if "Vegan" in categoryList:
+		categoryList.remove("Vegetarian")
+		return preperationList
+	for ingredient in ingredientList:
+		name=ingredient.get('name')
+		for meat in meats:
+			if bool(re.match(".(?i)*"+meat+".*",name)):
+				return preperationList, categoryList
+
+	for ingredient in ingredientList:
+		name=ingredient.get('name')
+		for veg in vegitarianProteins:
+			if bool(re.match(".(?i)*"+veg+".*",name)):
+				newVeg=vegToMeatDict.get(veg)
+				if newVeg==None:
+					newVeg="chicken"
+				newItem=re.sub(".(?i)*"+veg,newVeg,name)
+				ingredient['name']=newItem
+				hasMeat=True
+				break
+	count=0
+	print(hasMeat)
+	if hasMeat:
+		for step in preperationList:
+			newItem=step
+			for veg in vegitarianProteins:
+				newVeg=vegToMeatDict.get(veg)
+				if newVeg==None:
+					newVeg="chicken"
+				newItem=newItem.replace(veg, newVeg)
+
+			preperationList[count]=newItem
+			count+=1
+	else:
+		tempDict={}
+		tempDict["amount"]=1
+		tempDict["amount_type"]="sprinkle"
+		tempDict["name"]="bacon bits"
+		preperationList.append("Sprkinkle bacon bits on top of the dish.")
+	return preperationList,categoryList
 

@@ -1,12 +1,13 @@
 
-meats =['chicken thighs', "chicken broth","chicken wings","chicken stock", "chicken","beef stock","beef broth","beef",'pork',"salmon","veal", "chorizo","meat"]
+meats =['chicken thighs', "chicken broth","chicken wings","chicken stock", "chicken","beef stock","beef broth","beef",'pork',"salmon","veal", "chorizo","bacon","meat"]
 
-vegitarianProteins = ["tofu", "mixed vegitables", "portabelo mushrooms"]
+vegitarianProteins = ["tofu", "mixed vegitables", "portabelo mushrooms","smart bacon"]
 
 meatToVegDict={"chicken":"tofu","steak":"portabelo mushrooms", "chorizo":"tofu", "hot dog": "soy dog", "hamburger":"Veggie Burger", 
 			   "turkey":"soy", "veal":"tofu", "chicken thighs":"tofu","beef":"soy", "chicken broth":"vegetable broth", "chicken stock":"vegetable stock",
 			   "pork":"portabelo mushrooms","salmon":"tofu","veal":"portabelo mushrooms", "meat":"non-meat", "chicken wings":"tofu", "beef stock": "vegitable stock",
-			   "beef broth":"vegitable broth"}
+			   "beef broth":"vegitable broth", "bacon":"smart bacon"}
+vegToMeatDict={"tofu":"chicken", "portabel mushrooms":"steak", "smart bacon":"bacon"}
 
 measurements=["pound", "pounds", "cup", "cups", "ounce", "ounces", "teaspoon", "teaspoons", "tablespoons","tablespoon" ,"quart", "quarts", "pinch", "taste", "cans", "can"]
 
