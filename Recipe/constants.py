@@ -3,7 +3,7 @@ meats =['chicken thighs', "chicken broth","chicken wings","chicken stock", "chic
 
 vegitarianProteins = ["tofu", "mixed vegitables", "portabelo mushrooms","smart bacon"]
 
-meatToVegDict={"chicken":"tofu","steak":"portabelo mushrooms", "chorizo":"tofu", "hot dog": "soy dog", "hamburger":"Veggie Burger", 
+meatToVegDict={"chicken":"tofu","steak":"portabelo mushrooms", "chorizo":"tofu", "hot dog": "soy dog", "hamburger":"Veggie Burger",
 			   "turkey":"soy", "veal":"tofu", "chicken thighs":"tofu","beef":"soy", "chicken broth":"vegetable broth", "chicken stock":"vegetable stock",
 			   "pork":"portabelo mushrooms","salmon":"tofu","veal":"portabelo mushrooms", "meat":"non-meat", "chicken wings":"tofu", "beef stock": "vegitable stock",
 			   "beef broth":"vegitable broth", "bacon":"smart bacon"}
@@ -24,7 +24,7 @@ bakingIngreds =["flour", "baking soda", "sugar", "baking powder", "butter"]
 
 mexicanIngredients = {"ground cumin":"1 tablespoon","chipotle peppers":"2", "dried oregano":"1 teaspoon", "chile powder":"2 teaspoons"}
 
-mexicanPreps = {"tortillas":"1 per person"} 
+mexicanPreps = {"tortillas":"1 per person"}
 
 nonMexicanIngredinet = []
 
@@ -43,7 +43,7 @@ proteinsWithBones=["chicken wings", "chicken thighs"]
 
 soups=["chicken broth", "chickn stock", "beef broth", "beef stock", "vegitable stock", "vegetable broth"]
 
-tools=["pot", "tablespoons", "frying pan", "skillet", "lid", "skimmer", "oven", "bowl", "knife", "fork", "butter knife","grinder","griller", "grater", "oven mitts", "oven gloves", "plates"]
+tools=["pot", "tablespoons", "frying pan", "skillet", "lid", "skimmer", "oven", "bowl", "knife", "fork", "butter knife","grinder","griller", "grater", "oven mitts", "oven gloves", "plates", "whisk", "saucepan", "baking dish", 'thermometer']
 
 cookingMethods = ["marinate", "Marinate", "bake", "Bake", "fry", "Fry", "boil", "Boil", "roast", "Roast", "grill" , "Grill", "heat", "Heat", "saute", "Saute", "stir frying",
 				  "deep fry", "shallow fry", "stir fry", "pan fry", "steam","whip", "stir", "drain", "soak"]
