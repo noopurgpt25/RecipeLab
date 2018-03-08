@@ -12,7 +12,8 @@ vegToMeatDict={"tofu":"chicken", "portabel mushrooms":"steak", "smart bacon":"ba
 measurements=["pound", "pounds", "cup", "cups", "ounce", "ounces", "teaspoon", "teaspoons", "tablespoons","tablespoon" ,"quart", "quarts", "pinch", "taste", "cans", "can", "box"
 			  "boxes"]
 
-preperation=["ground","diced","chopped","minced","torn", "divided", "pitted", "beaten", "zested", "skinless","boneless", "self-rising", "white", "brown", "unsalted", "all-purpouse"]
+preperation=["ground","diced","chopped","minced","torn", "divided", "pitted", "beaten", "zested", "skinless","boneless", "self-rising", "white", "brown", "unsalted", 
+			 "heavy", "all-purpouse", "crushed", "whipping"]
 
 unHealthItems=["salt","sugar","butter","olive oil", "vegetable oil", "lard"]
 
@@ -43,10 +44,15 @@ proteinsWithBones=["chicken wings", "chicken thighs"]
 
 soups=["chicken broth", "chickn stock", "beef broth", "beef stock", "vegitable stock", "vegetable broth"]
 
+pastaIngreds=["tomatoes", "vodka", "pine nuts","cream", "whipping cream"]
+
 tools=["pot", "tablespoons", "frying pan", "skillet", "lid", "skimmer", "oven", "bowl", "knife", "fork", "butter knife","grinder","griller", "grater", "oven mitts", "oven gloves", "plates"]
 
 cookingMethods = ["marinate", "Marinate", "bake", "Bake", "fry", "Fry", "boil", "Boil", "roast", "Roast", "grill" , "Grill", "heat", "Heat", "saute", "Saute", "stir frying",
 				  "deep fry", "shallow fry", "stir fry", "pan fry", "steam","whip", "stir", "drain", "soak"]
 
+<<<<<<< HEAD
 fry2bakeMethods = {"fried": "baked", "Fried": "Baked", "fry" : "bake","Fry": "Bake", "Pan": "Oven", "pan":"oven", "cook": "bake",
 				   "Cook": "Bake","boil":"baked until brown", "toss" : "turn", "Toss": "Turn", "heat" : "bake"}
+=======
+>>>>>>> e1fc8f5732cbbf69cd743ef7fe290e2dc630ec31
