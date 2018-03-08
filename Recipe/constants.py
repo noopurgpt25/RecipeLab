@@ -51,8 +51,8 @@ tools=["pot", "tablespoons", "frying pan", "skillet", "lid", "skimmer", "oven", 
 cookingMethods = ["marinate", "Marinate", "bake", "Bake", "fry", "Fry", "boil", "Boil", "roast", "Roast", "grill" , "Grill", "heat", "Heat", "saute", "Saute", "stir frying",
 				  "deep fry", "shallow fry", "stir fry", "pan fry", "steam","whip", "stir", "drain", "soak"]
 
-<<<<<<< HEAD
-fry2bakeMethods = {"fried": "baked", "Fried": "Baked", "fry" : "bake","Fry": "Bake", "Pan": "Oven", "pan":"oven", "cook": "bake",
+
+fry2bakeMethods = {"frying": "baking" , "Frying" : "Baking" , "fried": "baked", "Fried": "Baked", "fry" : "bake","Fry": "Bake", "Pan": "Oven", "pan":"oven", "cook": "bake",
 				   "Cook": "Bake","boil":"baked until brown", "toss" : "turn", "Toss": "Turn", "heat" : "bake"}
-=======
->>>>>>> e1fc8f5732cbbf69cd743ef7fe290e2dc630ec31
+
+

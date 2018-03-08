@@ -24,3 +24,8 @@ def fry2bake(ingredientList, preparationList):
 
     #increase the time of cooking
 
+
+def bake2fry(ingredientList, preparationList):
+    new_prep_list =[]
+    
+    return new_prep_list
