@@ -9,14 +9,14 @@ Our project completes the following tasks:
 
 1. Fetches the page for a recipe on AllRecipes.com. See `recipeMain.py` for an example and `webScrape.py` for the underlying functions.
 
-2. Parses it into a recipe data representation. Our parser recognizes ingredients (name, quantity, measurement) and steps. See `webScrape.py`.
+2. Parses it into a recipe data representation. Our parser recognizes ingredients (name, quantity, measurement), steps, tools, and cooking methods. See `webScrape.py`.
 
 3. Transforms recipes along the vegetarian (see `vegitarian.py`), health (see `makeHealthy.py`), cuisine style (see `makeMexican.py`), and difficulty (see `makeSimple.py`) dimensions. Our transformations rely on a large set of constants (see `constants.py`) that represents pre-existing cooking knowledge.
 
 TODO:
 - ~~Parse tools~~
-- Parse methods
-- Ask user what kind of transformation
+- ~~Parse methods~~
+- ~~Ask user what kind of transformation~~
 - Display transformed recipe in human-friendly format
-- Improve vegetarian  transformation
+- Improve vegetarian transformation
 - Improve difficulty transformation

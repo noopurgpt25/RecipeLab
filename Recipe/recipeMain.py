@@ -14,26 +14,57 @@ from makeSimple import *
 #link = "https://www.allrecipes.com/recipe/72508/the-best-vegetarian-chili-in-the-world/?internalSource=hub%20recipe&referringContentType=search%20results&clickId=cardslot%204"
 #link = "https://www.allrecipes.com/recipe/13896/tofu-parmigiana/?internalSource=staff%20pick&referringId=270&referringContentType=recipe%20hub"
 #link = "https://www.allrecipes.com/recipe/262234/best-ever-lemon-drizzle-cake/?internalSource=staff%20pick&referringId=276&referringContentType=recipe%20hub"
-link = "https://www.allrecipes.com/recipe/8372/black-magic-cake/?internalSource=hub%20recipe&referringContentType=search%20results&clickId=cardslot%203"
-testIngredients=scrape_recipe_info(link);
-testSteps=scrape_preperation_info(link);
-testCategories=scrape_categories_info(link);
+# link = "https://www.allrecipes.com/recipe/8372/black-magic-cake/?internalSource=hub%20recipe&referringContentType=search%20results&clickId=cardslot%203"
+# testIngredients=scrape_recipe_info(link);
+# testSteps=scrape_preperation_info(link);
+# testCategories=scrape_categories_info(link);
 
-#testSteps = makeMexican(testIngredients,testSteps,testCategories)
-#testSteps,testCategories = makeNonVegitarian(testIngredients,testSteps,testCategories)
-#testSteps=makeVegitarian(testIngredients,testSteps,testCategories)
-#testSteps= makeHealth(testIngredients,testSteps)
-#testSteps= makeUnhealthy(testIngredients,testSteps)
-testSteps= makeSimpler(testIngredients,testSteps, testCategories)
+# user input: link
+link = input("Enter an AllRecipes.com link: ")
 
-for thing in testIngredients:
- 	print(thing)
- 	print('\n')
+recipe_dictionary = get_recipe_dictionary(link)
 
-for thing in testSteps:
-	print(thing)
-	print('\n')
+# user input: transformation
+while True:
+	print("0: View existing recipe")
+	print("1: Make recipe vegetarian")
+	print("2: Make recipe non-vegetarian")
+	print("3: Make recipe healthy")
+	print("4: Make recipe unhealthy")
+	print("5: Make recipe Mexican-style")
+	print("6: Make recipe simpler")
+	print("7: Quit")
+	inp = int(input("Enter a number: "))
 
-for thing in testCategories:
-	print(thing)
-	print('\n')
+	if inp == 0:
+		testSteps = recipe_dictionary['steps']
+	elif inp == 1:
+		testSteps=makeVegitarian(testIngredients,testSteps,testCategories)
+	elif inp == 2:
+		testSteps,testCategories = makeNonVegitarian(testIngredients,testSteps,testCategories)
+	elif inp == 3:
+		testSteps= makeHealth(testIngredients,testSteps)
+	elif inp == 4:
+		testSteps= makeUnhealthy(testIngredients,testSteps)
+	elif inp == 5:
+		testSteps = makeMexican(recipe_dictionary['ingredients'],recipe_dictionary['steps'],recipe_dictionary['categories'])
+	elif inp == 6:
+		testSteps= makeSimpler(testIngredients,testSteps, testCategories)
+	elif inp == 7:
+		break
+	else:
+		print("Invalid input!")
+
+	print(testSteps)
+
+# for thing in testIngredients:
+#  	print(thing)
+#  	print('\n')
+
+# for thing in testSteps:
+# 	print(thing)
+# 	print('\n')
+
+# for thing in testCategories:
+# 	print(thing)
+# 	print('\n')

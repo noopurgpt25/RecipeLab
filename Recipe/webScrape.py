@@ -152,3 +152,12 @@ def scrape_methods_info(preparation_steps):
     # get ride of duplicates
     methods_list = list(set([m.lower() for m in methods_list]))
     return methods_list
+
+def get_recipe_dictionary(link):
+    d = {}
+    d['ingredients'] = scrape_recipe_info(link)
+    d['steps'] = scrape_preperation_info(link)
+    d['categories'] = scrape_categories_info(link)
+    d['methods'] = scrape_methods_info(d['steps'])
+    d['tools'] = scrape_tools_info(d['steps'])
+    return d
