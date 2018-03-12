@@ -42,17 +42,17 @@ while True:
 	if inp == 0:
 		testSteps = recipe_dictionary['steps']
 	elif inp == 1:
-		testSteps=makeVegitarian(testIngredients,testSteps,testCategories)
+		testSteps=makeVegitarian(recipe_dictionary['ingredients'],recipe_dictionary['steps'],recipe_dictionary['categories'])
 	elif inp == 2:
-		testSteps,testCategories = makeNonVegitarian(testIngredients,testSteps,testCategories)
+		testSteps,testCategories = makeNonVegitarian(recipe_dictionary['ingredients'],recipe_dictionary['steps'],recipe_dictionary['categories'])
 	elif inp == 3:
-		testSteps= makeHealth(testIngredients,testSteps)
+		testSteps= makeHealth(recipe_dictionary['ingredients'],recipe_dictionary['steps'])
 	elif inp == 4:
-		testSteps= makeUnhealthy(testIngredients,testSteps)
+		testSteps= makeUnhealthy(recipe_dictionary['ingredients'],recipe_dictionary['steps'])
 	elif inp == 5:
 		testSteps = makeMexican(recipe_dictionary['ingredients'],recipe_dictionary['steps'],recipe_dictionary['categories'])
 	elif inp == 6:
-		testSteps= makeSimpler(testIngredients,testSteps, testCategories)
+		testSteps= makeSimpler(recipe_dictionary['ingredients'],recipe_dictionary['steps'], recipe_dictionary['categories'])
 	elif inp == 7:
 		break
 	else:
