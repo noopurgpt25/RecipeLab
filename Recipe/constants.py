@@ -19,7 +19,7 @@ unHealthItems=["salt","sugar","butter","olive oil", "vegetable oil", "lard"]
 
 healthierItems=["vegetable oil", "olive oil", "peanut oil", "sesame oil", "oil"]
 
-readMeats = ["beef", "pork", "steak", "pork", "chorizo", "veal"]
+redMeats = ["beef", "pork", "steak", "pork", "chorizo", "veal"]
 
 bakingIngreds =["flour", "baking soda", "sugar", "baking powder", "butter"]
 
@@ -55,5 +55,13 @@ cookingMethods = ["marinate", "Marinate", "bake", "Bake", "fry", "Fry", "boil", 
 
 fry2bakeMethods = {"frying": "baking" , "Frying" : "Baking" , "fried": "baked", "Fried": "Baked", "fry" : "bake","Fry": "Bake", "Pan": "Oven", "pan":"oven", "cook": "bake",
 				   "Cook": "Bake","boil":"baked until brown", "toss" : "turn", "Toss": "Turn", "heat" : "bake"}
+
+
+
+meatToVeganDict={"chicken":"tofu","steak":"portabelo mushrooms", "chorizo":"tofu", "hot dog": "soy dog", "hamburger":"Veggie Burger", 
+			   "turkey":"soy", "veal":"tofu", "chicken thighs":"tofu","beef":"soy", "chicken broth":"vegetable broth", "chicken stock":"vegetable stock",
+			   "pork":"portabelo mushrooms","salmon":"tofu","veal":"portabelo mushrooms", "meat":"non-meat", "chicken wings":"tofu", "beef stock": "vegitable stock",
+			   "beef broth":"vegitable broth", "bacon":"smart bacon", "cheese":"fake cheese", "milk": "almond milk", "butter": "margarine",
+			   "eggs": "eggplant", "egg": "eggplant"}
 
 
