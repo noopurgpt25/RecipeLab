@@ -27,5 +27,5 @@ def fry2bake(ingredientList, preparationList):
 
 def bake2fry(ingredientList, preparationList):
     new_prep_list =[]
-    
+
     return new_prep_list
