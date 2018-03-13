@@ -36,7 +36,9 @@ while True:
 	print("4: Make recipe unhealthy")
 	print("5: Make recipe Mexican-style")
 	print("6: Make recipe simpler")
-	print("7: Quit")
+	print("7: Make recipe fry to bake")
+	print("8: Make recipe bake to fry")
+	print("9: Quit")
 	inp = int(input("Enter a number: "))
 
 	if inp == 0:
@@ -54,6 +56,10 @@ while True:
 	elif inp == 6:
 		testSteps= makeSimpler(recipe_dictionary['ingredients'],recipe_dictionary['steps'], recipe_dictionary['categories'])
 	elif inp == 7:
+		testSteps = fry2bake(recipe_dictionary['ingredients'], recipe_dictionary['steps'])
+	elif inp == 8:
+		testSteps = bake2fry(recipe_dictionary['ingredients'], recipe_dictionary['steps'])
+	elif inp == 9:
 		break
 	else:
 		print("Invalid input!")
