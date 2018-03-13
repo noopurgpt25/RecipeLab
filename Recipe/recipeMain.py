@@ -6,6 +6,14 @@ from makeMexican import *
 from makeSimple import *
 from cookingMethod import *
 
+# testIngredients=scrape_recipe_info(link);
+# testSteps=scrape_preperation_info(link);
+# testCategories=scrape_categories_info(link);
+
+# user input: link
+link = input("Enter an AllRecipes.com link: ")
+
+
 #link = "https://www.allrecipes.com/recipe/260463/italian-chicken-cacciatore/?internalSource=rotd&referringContentType=home%20page&clickId=cardslot%201";
 #link = "https://www.allrecipes.com/recipe/244195/italian-portuguese-meat-loaf-fusion/?internalSource=previously%20viewed&referringContentType=home%20page&clickId=cardslot%205";
 #link = "https://www.allrecipes.com/recipe/262608/cypriot-tahini-pies-with-orange-flavor/?internalSource=staff%20pick&referringContentType=home%20page&clickId=cardslot%2017";
@@ -16,29 +24,50 @@ from cookingMethod import *
 #link = "https://www.allrecipes.com/recipe/13896/tofu-parmigiana/?internalSource=staff%20pick&referringId=270&referringContentType=recipe%20hub"
 #link = "https://www.allrecipes.com/recipe/262234/best-ever-lemon-drizzle-cake/?internalSource=staff%20pick&referringId=276&referringContentType=recipe%20hub"
 #link = "https://www.allrecipes.com/recipe/8372/black-magic-cake/?internalSource=hub%20recipe&referringContentType=search%20results&clickId=cardslot%203"
-#link = "https://www.allrecipes.com/recipe/11815/penne-with-spicy-vodka-tomato-cream-sauce/?internalSource=hub%20recipe&referringId=17245&referringContentType=recipe%20hub"
-link = "https://www.allrecipes.com/recipe/79518/hasselback-potatoes/?internalSource=streams&referringId=1542&referringContentType=recipe%20hub&clickId=st_trending_b"
-testIngredients=scrape_recipe_info(link);
-testSteps=scrape_preperation_info(link);
-testCategories=scrape_categories_info(link);
 
-#testSteps = makeMexican(testIngredients,testSteps,testCategories)
-#testSteps,testCategories = makeNonVegitarian(testIngredients,testSteps,testCategories)
-#testSteps=makeVegitarian(testIngredients,testSteps,testCategories)
-#testSteps= makeHealth(testIngredients,testSteps)
-#testSteps= makeUnhealthy(testIngredients,testSteps)
-# testSteps= makeSimpler(testIngredients,testSteps, testCategories)
-testSteps= fry2bake(testIngredients, testSteps)
+recipe_dictionary = get_recipe_dictionary(link)
 
+# user input: transformation
+while True:
+	print("0: View existing recipe")
+	print("1: Make recipe vegetarian")
+	print("2: Make recipe non-vegetarian")
+	print("3: Make recipe healthy")
+	print("4: Make recipe unhealthy")
+	print("5: Make recipe Mexican-style")
+	print("6: Make recipe simpler")
+	print("7: Quit")
+	inp = int(input("Enter a number: "))
 
-for thing in testIngredients:
- 	print(thing)
- 	print('\n')
+	if inp == 0:
+		testSteps = recipe_dictionary['steps']
+	elif inp == 1:
+		testSteps=makeVegitarian(recipe_dictionary['ingredients'],recipe_dictionary['steps'],recipe_dictionary['categories'])
+	elif inp == 2:
+		testSteps,testCategories = makeNonVegitarian(recipe_dictionary['ingredients'],recipe_dictionary['steps'],recipe_dictionary['categories'])
+	elif inp == 3:
+		testSteps= makeHealth(recipe_dictionary['ingredients'],recipe_dictionary['steps'])
+	elif inp == 4:
+		testSteps= makeUnhealthy(recipe_dictionary['ingredients'],recipe_dictionary['steps'])
+	elif inp == 5:
+		testSteps = makeMexican(recipe_dictionary['ingredients'],recipe_dictionary['steps'],recipe_dictionary['categories'])
+	elif inp == 6:
+		testSteps= makeSimpler(recipe_dictionary['ingredients'],recipe_dictionary['steps'], recipe_dictionary['categories'])
+	elif inp == 7:
+		break
+	else:
+		print("Invalid input!")
 
-for thing in testSteps:
-	print(thing)
-	print('\n')
+	print(testSteps)
 
-for thing in testCategories:
-	print(thing)
-	print('\n')
+# for thing in testIngredients:
+#  	print(thing)
+#  	print('\n')
+
+# for thing in testSteps:
+# 	print(thing)
+# 	print('\n')
+
+# for thing in testCategories:
+# 	print(thing)
+# 	print('\n')

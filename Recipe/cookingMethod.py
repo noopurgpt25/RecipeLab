@@ -22,10 +22,12 @@ def fry2bake(ingredientList, preparationList):
     # print (new_prep_list)
     return new_prep_list
 
-    #increase the time of cooking
+    #incre ase the time of cooking
 
 
 def bake2fry(ingredientList, preparationList):
     new_prep_list =[]
-
+    # remove preheat oven line
+    # reduce time
+    
     return new_prep_list

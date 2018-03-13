@@ -101,7 +101,7 @@ def scrape_preperation_info(link):
     soup = BeautifulSoup(content, 'lxml')
     preperation = []
     element = soup.find("div", {"class": "directions--section__steps"})
-    count =1 
+    count =1
     for item in element:
         if((isinstance(item,bs4.element.Tag))):
             temp=item.get_text();
@@ -132,3 +132,32 @@ def scrape_categories_info(link):
     for item in element:
         categories.append(item["content"])
     return(categories)
+
+def scrape_tools_info(preparation_steps):
+    # input: list of steps (strings) output: list of strings (tools)
+    tools_list = []
+    for step in preparation_steps:
+        for tool in tools:
+            if bool(re.match('.(?i)*'+tool+'.*',step)):
+                tools_list.append(tool)
+    return tools_list
+
+def scrape_methods_info(preparation_steps):
+    # input: list of steps (strings) output: list of strings (tools)
+    methods_list = []
+    for step in preparation_steps:
+        for method in cookingMethods:
+            if bool(re.match('.(?i)*'+method+'.*',step)):
+                methods_list.append(method)
+    # get ride of duplicates
+    methods_list = list(set([m.lower() for m in methods_list]))
+    return methods_list
+
+def get_recipe_dictionary(link):
+    d = {}
+    d['ingredients'] = scrape_recipe_info(link)
+    d['steps'] = scrape_preperation_info(link)
+    d['categories'] = scrape_categories_info(link)
+    d['methods'] = scrape_methods_info(d['steps'])
+    d['tools'] = scrape_tools_info(d['steps'])
+    return d
