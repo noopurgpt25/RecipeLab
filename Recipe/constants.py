@@ -38,8 +38,8 @@ mexicanSides =["hot sauce", "sour cream", "cheese", "guacamole"]
 mexicanSoupSides= ["cheese", "cilantro","crushed tortilla chips"]
 
 mexicanSubsDict={"pasta sauce":"salsa", "italian seasoning":"taco seasoning", "ketchup":"salsa","soy sauce":"tabasco sauce", "olives":"avocado","sesame oil":"olive oil",
-				  "asian chili garlic sauce": "sriracha", "duck":"chorizo", "garbanzo beans", "black beans", "green onions", "onions"
-				  ,"wasabi":"hot sauce":"water crescent":"green peppers"}
+				  "asian chili garlic sauce": "sriracha", "duck":"chorizo", "garbanzo beans": "black beans", "green onions":"onions"
+				  ,"wasabi":"hot sauce", "water crescent":"green peppers"}
 
 proteinsWithBones=["chicken wings", "chicken thighs", "ribs", "pork ribs" ,"beef ribs", "short ribs"]
 
@@ -57,7 +57,7 @@ cookingMethods = ["marinate", "Marinate", "bake", "Bake", "fry", "Fry", "boil", 
 fry2bakeMethods = {"frying": "baking" , "Frying" : "Baking" , "fried": "baked", "Fried": "Baked", "fry" : "bake","Fry": "Bake", "Pan": "Oven", "pan":"oven", "cook": "bake",
 				   "Cook": "Bake","boil":"baked until brown", "toss" : "turn", "Toss": "Turn", "heat" : "bake"}
 
-
+bake2fryMethods = {"baking" : "frying", "Baking" : "Frying", "baked" : "fried", "fry" : "bake", "oven" : "frying pan"}
 
 meatToVeganDict={"chicken":"tofu","steak":"portabelo mushrooms", "chorizo":"tofu", "hot dog": "soy dog", "hamburger":"Veggie Burger", 
 			   "turkey":"soy", "veal":"tofu", "chicken thighs":"tofu","beef":"soy", "chicken broth":"vegetable broth", "chicken stock":"vegetable stock",
