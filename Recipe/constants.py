@@ -38,9 +38,10 @@ mexicanSides =["hot sauce", "sour cream", "cheese", "guacamole"]
 mexicanSoupSides= ["cheese", "cilantro","crushed tortilla chips"]
 
 mexicanSubsDict={"pasta sauce":"salsa", "italian seasoning":"taco seasoning", "ketchup":"salsa","soy sauce":"tabasco sauce", "olives":"avocado","sesame oil":"olive oil",
-				  "asian chili garlic sauce": "sriracha"}
+				  "asian chili garlic sauce": "sriracha", "duck":"chorizo", "garbanzo beans", "black beans", "green onions", "onions"
+				  ,"wasabi":"hot sauce":"water crescent":"green peppers"}
 
-proteinsWithBones=["chicken wings", "chicken thighs"]
+proteinsWithBones=["chicken wings", "chicken thighs", "ribs", "pork ribs" ,"beef ribs", "short ribs"]
 
 soups=["chicken broth", "chickn stock", "beef broth", "beef stock", "vegitable stock", "vegetable broth"]
 
@@ -62,6 +63,8 @@ meatToVeganDict={"chicken":"tofu","steak":"portabelo mushrooms", "chorizo":"tofu
 			   "turkey":"soy", "veal":"tofu", "chicken thighs":"tofu","beef":"soy", "chicken broth":"vegetable broth", "chicken stock":"vegetable stock",
 			   "pork":"portabelo mushrooms","salmon":"tofu","veal":"portabelo mushrooms", "meat":"non-meat", "chicken wings":"tofu", "beef stock": "vegitable stock",
 			   "beef broth":"vegitable broth", "bacon":"smart bacon", "cheese":"fake cheese", "milk": "almond milk", "butter": "margarine",
-			   "eggs": "eggplant", "egg": "eggplant"}
+			   "eggs": "eggplant", "egg": "eggplant","feta cheese":"fake cheese", "mozarella cheese":"fake cheese","american cheese":"fake cheese"
+			   ,"swiss cheese":"fake cheese"}
+
 
 

@@ -25,10 +25,10 @@ link = input("Enter an AllRecipes.com link: ")
 #link = "https://www.allrecipes.com/recipe/262234/best-ever-lemon-drizzle-cake/?internalSource=staff%20pick&referringId=276&referringContentType=recipe%20hub"
 #link = "https://www.allrecipes.com/recipe/8372/black-magic-cake/?internalSource=hub%20recipe&referringContentType=search%20results&clickId=cardslot%203"
 
-recipe_dictionary = get_recipe_dictionary(link)
 
 # user input: transformation
 while True:
+	recipe_dictionary = get_recipe_dictionary(link)
 	print("0: View existing recipe")
 	print("1: Make recipe vegetarian")
 	print("2: Make recipe non-vegetarian")
