@@ -8,7 +8,7 @@ def incrementNumbers(statement):
     # number2 = number1 + 1
     for numbers in statement:
         if numbers.isdigit():
-            number2 = int(numbers) + 3
+            number2 = int(numbers) 
             statement = statement.replace(numbers,str(number2))
     return statement
 
