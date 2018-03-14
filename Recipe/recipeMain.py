@@ -6,19 +6,45 @@ from makeMexican import *
 from makeSimple import *
 from cookingMethod import *
 
-def showStepsInBrowser(steps):
+def showStepsInBrowser(steps, ingredients):
 	# steps is a list of strings
 	filename = 'recipe.html'
 	f = open(filename,'w')
 
 	message = """<html>
-	<head></head>
+	<head>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	</head>
+	<body>
+	<div class='container'>
+	<h1>Ingredients</h1>
 	<ul>"""
 
+	for ingredient in ingredients:
+		ingredient_amount = str(ingredient['amount']) if 'amount' in ingredient else ''
+		ingredient_amount_type = str(ingredient['amount_type']) if 'amount_type' in ingredient else ''
+		ingredient_preparation = str(ingredient['preperation']) if 'preperation' in ingredient else ''
+		ingredient_name = str(ingredient['name']) if 'name' in ingredient else ''
+		ingredient_notes = str(ingredient['notes']) if 'notes' in ingredient else ''
+		message += '<li>' + ingredient_amount + ' '
+		if ingredient_amount_type:
+			message += ingredient_amount_type + ' of '
+		message +=  ingredient_preparation + ' ' + ingredient_name
+		if ingredient_notes:
+			message += ', note: ' + ingredient['notes']
+		message += '</li>'
+	message += """</ul>
+	<h1>Recipe</h1>
+	<ul>
+	"""
+
 	for step in steps:
-		message += "<li>" + step + "</li>"
+		message += '<li>' + step + '</li>'
 
 	message += """</ul>
+	</div>
+	</body>
 	</html>"""
 
 	f.write(message)
@@ -63,32 +89,39 @@ while True:
 	inp = int(input("Enter a number: "))
 
 	if inp == 0:
-		testSteps = recipe_dictionary['steps']
+		steps = recipe_dictionary['steps']
+		ingredients = recipe_dictionary['ingredients']
 	elif inp == 1:
-		testSteps=makeVegitarian(recipe_dictionary['ingredients'],recipe_dictionary['steps'],recipe_dictionary['categories'])
+		steps=makeVegitarian(recipe_dictionary['ingredients'],recipe_dictionary['steps'],recipe_dictionary['categories'])
+		ingredients = recipe_dictionary['ingredients']
 	elif inp == 2:
-		testSteps,testCategories = makeNonVegitarian(recipe_dictionary['ingredients'],recipe_dictionary['steps'],recipe_dictionary['categories'])
+		steps,testCategories = makeNonVegitarian(recipe_dictionary['ingredients'],recipe_dictionary['steps'],recipe_dictionary['categories'])
+		ingredients = recipe_dictionary['ingredients']
 	elif inp == 3:
-		testSteps= makeHealth(recipe_dictionary['ingredients'],recipe_dictionary['steps'])
+		steps= makeHealth(recipe_dictionary['ingredients'],recipe_dictionary['steps'])
+		ingredients = recipe_dictionary['ingredients']
 	elif inp == 4:
-		testSteps= makeUnhealthy(recipe_dictionary['ingredients'],recipe_dictionary['steps'])
+		steps= makeUnhealthy(recipe_dictionary['ingredients'],recipe_dictionary['steps'])
+		ingredients = recipe_dictionary['ingredients']
 	elif inp == 5:
-		testSteps = makeMexican(recipe_dictionary['ingredients'],recipe_dictionary['steps'],recipe_dictionary['categories'])
+		steps = makeMexican(recipe_dictionary['ingredients'],recipe_dictionary['steps'],recipe_dictionary['categories'])
+		ingredients = recipe_dictionary['ingredients']
 	elif inp == 6:
-		testSteps= makeSimpler(recipe_dictionary['ingredients'],recipe_dictionary['steps'], recipe_dictionary['categories'])
+		steps= makeSimpler(recipe_dictionary['ingredients'],recipe_dictionary['steps'], recipe_dictionary['categories'])
+		ingredients = recipe_dictionary['ingredients']
 	elif inp == 7:
-		testingredients,testSteps = fry2bake(recipe_dictionary['ingredients'], recipe_dictionary['steps'])
+		ingredients,steps = fry2bake(recipe_dictionary['ingredients'], recipe_dictionary['steps'])
 	elif inp == 8:
-		testingredients,testSteps = bake2fry(recipe_dictionary['ingredients'], recipe_dictionary['steps'])
+		ingredients,steps = bake2fry(recipe_dictionary['ingredients'], recipe_dictionary['steps'])
 	elif inp == 9:
 		break
 	else:
 		print("Invalid input!")
 
 
-	# print(testingredients)
-	print(testSteps)
-	showStepsInBrowser(testSteps)
+	print(ingredients)
+	print(steps)
+	showStepsInBrowser(steps, ingredients)
 
 # for thing in testIngredients:
 #  	print(thing)
