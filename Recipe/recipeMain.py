@@ -56,14 +56,16 @@ while True:
 	elif inp == 6:
 		testSteps= makeSimpler(recipe_dictionary['ingredients'],recipe_dictionary['steps'], recipe_dictionary['categories'])
 	elif inp == 7:
-		testSteps = fry2bake(recipe_dictionary['ingredients'], recipe_dictionary['steps'])
+		testingredients,testSteps = fry2bake(recipe_dictionary['ingredients'], recipe_dictionary['steps'])
 	elif inp == 8:
-		testSteps = bake2fry(recipe_dictionary['ingredients'], recipe_dictionary['steps'])
+		testingredients,testSteps = bake2fry(recipe_dictionary['ingredients'], recipe_dictionary['steps'])
 	elif inp == 9:
 		break
 	else:
 		print("Invalid input!")
 
+
+	print(testingredients)
 	print(testSteps)
 
 # for thing in testIngredients:

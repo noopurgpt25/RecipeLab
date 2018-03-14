@@ -54,10 +54,11 @@ cookingMethods = ["marinate", "Marinate", "bake", "Bake", "fry", "Fry", "boil", 
 				  "deep fry", "shallow fry", "stir fry", "pan fry", "steam","whip", "stir", "drain", "soak"]
 
 
-fry2bakeMethods = {"frying": "baking" , "Frying" : "Baking" , "fried": "baked", "Fried": "Baked", "fry" : "bake","Fry": "Bake", "Pan": "Oven", "pan":"oven", "cook": "bake",
-				   "Cook": "Bake","boil":"baked until brown", "toss" : "turn", "Toss": "Turn", "heat" : "bake"}
+fry2bakeMethods = {"frying": "baking" , "Frying" : "Baking" , "fried": "baked", "Fried": "Baked", "fry" : "bake","Fry": "Bake", "Pan": "Oven",
+				   "pan":"oven", "cook": "bake","Cook": "Bake","boil":"baked until brown", "toss" : "turn", "Toss": "Turn", "heat" : "bake"}
 
-bake2fryMethods = {"baking" : "frying", "Baking" : "Frying", "baked" : "fried", "fry" : "bake", "oven" : "frying pan"}
+bake2fryMethods = {"baking dish" : "frying pan", "baking" : "frying", "Baking" : "Frying", "baked" : "fried", "bake" : "fry", "oven rack" : "pan",
+				   "oven" : "frying pan", "preheated" : "", "Bake" : "Fry" }
 
 meatToVeganDict={"chicken":"tofu","steak":"portabelo mushrooms", "chorizo":"tofu", "hot dog": "soy dog", "hamburger":"Veggie Burger", 
 			   "turkey":"soy", "veal":"tofu", "chicken thighs":"tofu","beef":"soy", "chicken broth":"vegetable broth", "chicken stock":"vegetable stock",

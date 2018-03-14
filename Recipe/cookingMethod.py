@@ -1,33 +1,70 @@
 from constants import *
 import re
 import random
+import math
 
+def incrementNumbers(statement):
+    # number1 = int(input('What number would you like to increment?')
+    # number2 = number1 + 1
+    for numbers in statement:
+        if numbers.isdigit():
+            number2 = int(numbers) + 3
+            statement = statement.replace(numbers,str(number2))
+    return statement
+
+def decrementNumbers(statement):
+    # number1 = int(input('What number would you like to increment?')
+    # number2 = number1 + 1
+    for numbers in statement:
+        if numbers.isdigit():
+            number2 = math.ceil(int(numbers)/2)
+            statement = statement.replace(numbers,str(number2))
+    return statement
 
 def fry2bake(ingredientList, preparationList):
-    print (ingredientList)
-    # print (preparationList)
+    new_prep_ingred = []
+    for item in ingredientList:
+        new_item = item
+        for key in fry2bakeMethods.keys():
+            if key in new_item:
+                new_item = new_item.replace(key, fry2bakeMethods[key])
+        new_prep_ingred.append(new_item)
 
     step1 = "Preheat the oven for 10 min"
-    new_prep_list = [step1]
+    new_prep_list = []
     for step in preparationList:
+        step = incrementNumbers(step)
+        # print (step)
         new_step = step
         for key in fry2bakeMethods.keys():
             if key in new_step:
-                print (key)
                 new_step = new_step.replace(key, fry2bakeMethods[key])
-                print (new_step)
 
         new_prep_list.append(new_step)
-
-    # print (new_prep_list)
-    return new_prep_list
-
-    #incre ase the time of cooking
+    new_prep_list.insert(3,step1)
+    return new_prep_ingred, new_prep_list
 
 
 def bake2fry(ingredientList, preparationList):
-    new_prep_list =[]
     # remove preheat oven line
-    # reduce time
-    
-    return new_prep_list
+    del preparationList[3]
+    # print (preparationList)
+
+    new_prep_ingred = []
+    for item in ingredientList:
+        new_item = item
+        for key in bake2fryMethods.keys ():
+            if key in new_item:
+                new_item = new_item.replace (key, bake2fryMethods[key])
+        new_prep_ingred.append (new_item)
+
+    new_prep_list = []
+    for step in preparationList:
+        step = decrementNumbers(step)
+        new_step = step
+        for key in bake2fryMethods.keys():
+            if key in new_step:
+                new_step = new_step.replace(key, bake2fryMethods[key])
+        new_prep_list.append(new_step)
+
+    return new_prep_ingred, new_prep_list
