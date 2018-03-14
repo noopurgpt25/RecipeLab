@@ -1,6 +1,6 @@
 
 meats =['chicken thighs', "chicken broth","chicken wings","chicken stock", "chicken","beef stock","beef broth","beef sirloin","beef",'pork',"salmon","veal", "chorizo","bacon"
-	"lamb", "skirt stgeak", "steak", "tuna", "salmon", "talapia","meat"]
+	"lamb", "skirt stgeak", "steak", "tuna", "salmon", "talapia","shirmp","clam","oyster","meat"]
 
 vegitarianProteins = ["tofu", "mixed vegitables", "portabelo mushrooms","smart bacon"]
 
