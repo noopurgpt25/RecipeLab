@@ -1,19 +1,21 @@
 
-meats =['chicken thighs', "chicken broth","chicken wings","chicken stock", "chicken","beef stock","beef broth","beef",'pork',"salmon","veal", "chorizo","bacon","meat"]
+meats =['chicken thighs', "chicken broth","chicken wings","chicken stock", "chicken","beef stock","beef broth","beef sirloin","beef",'pork',"salmon","veal", "chorizo","bacon"
+	"lamb", "skirt stgeak", "steak", "tuna", "salmon", "talapia","meat"]
 
 vegitarianProteins = ["tofu", "mixed vegitables", "portabelo mushrooms","smart bacon"]
 
 meatToVegDict={"chicken":"tofu","steak":"portabelo mushrooms", "chorizo":"tofu", "hot dog": "soy dog", "hamburger":"Veggie Burger",
 			   "turkey":"soy", "veal":"tofu", "chicken thighs":"tofu","beef":"soy", "chicken broth":"vegetable broth", "chicken stock":"vegetable stock",
 			   "pork":"portabelo mushrooms","salmon":"tofu","veal":"portabelo mushrooms", "meat":"non-meat", "chicken wings":"tofu", "beef stock": "vegitable stock",
-			   "beef broth":"vegitable broth", "bacon":"smart bacon"}
+			   "beef broth":"vegitable broth", "bacon":"smart bacon","beef":"tofu","lamb":"tofu","tuna":"portabello mushcrooms","beef sirloin":"tofu"}
+
 vegToMeatDict={"tofu":"chicken", "portabel mushrooms":"steak", "smart bacon":"bacon"}
 
 measurements=["pound", "pounds", "cup", "cups", "ounce", "ounces", "teaspoon", "teaspoons", "tablespoons","tablespoon" ,"quart", "quarts", "pinch", "taste", "cans", "can", "box"
-			  "boxes"]
+			  "boxes", "packages","slices","leaves"]
 
 preperation=["ground","diced","chopped","minced","torn", "divided", "pitted", "beaten", "zested", "skinless","boneless", "self-rising", "white", "brown", "unsalted", 
-			 "heavy", "all-purpouse", "crushed", "whipping"]
+			 "heavy", "all-purpouse", "crushed", "whipping","shredded","seeded","split"]
 
 unHealthItems=["salt","sugar","butter","olive oil", "vegetable oil", "lard"]
 
@@ -39,7 +41,8 @@ mexicanSoupSides= ["cheese", "cilantro","crushed tortilla chips"]
 
 mexicanSubsDict={"pasta sauce":"salsa", "italian seasoning":"taco seasoning", "ketchup":"salsa","soy sauce":"tabasco sauce", "olives":"avocado","sesame oil":"olive oil",
 				  "asian chili garlic sauce": "sriracha", "duck":"chorizo", "garbanzo beans": "black beans", "green onions":"onions"
-				  ,"wasabi":"hot sauce", "water crescent":"green peppers"}
+				  ,"wasabi":"hot sauce", "water crescent":"green peppers","swiss cheese":"pepper jack cheese", "feta cheese":"pepper jack cheese","mozarella cheese": "pepper jack cheese"
+				  ,"peas":"corn","mustard":"sriracha","cucumber":"red peppers","goat":"pork"}
 
 proteinsWithBones=["chicken wings", "chicken thighs", "ribs", "pork ribs" ,"beef ribs", "short ribs"]
 
@@ -54,11 +57,10 @@ cookingMethods = ["marinate", "Marinate", "bake", "Bake", "fry", "Fry", "boil", 
 				  "deep fry", "shallow fry", "stir fry", "pan fry", "steam","whip", "stir", "drain", "soak"]
 
 
-fry2bakeMethods = {"frying": "baking" , "Frying" : "Baking" , "fried": "baked", "Fried": "Baked", "fry" : "bake","Fry": "Bake", "Pan": "Oven",
-				   "pan":"oven", "cook": "bake","Cook": "Bake","boil":"baked until brown", "toss" : "turn", "Toss": "Turn", "heat" : "bake"}
+fry2bakeMethods = {"frying": "baking" , "Frying" : "Baking" , "fried": "baked", "Fried": "Baked", "fry" : "bake","Fry": "Bake", "Pan": "Oven", "pan":"oven", "cook": "bake",
+				   "Cook": "Bake","boil":"baked until brown", "toss" : "turn", "Toss": "Turn", "heat" : "bake"}
 
-bake2fryMethods = {"baking dish" : "frying pan", "baking" : "frying", "Baking" : "Frying", "baked" : "fried", "bake" : "fry", "oven rack" : "pan",
-				   "oven" : "frying pan", "preheated" : "", "Bake" : "Fry" }
+bake2fryMethods = {"baking" : "frying", "Baking" : "Frying", "baked" : "fried", "fry" : "bake", "oven" : "frying pan"}
 
 meatToVeganDict={"chicken":"tofu","steak":"portabelo mushrooms", "chorizo":"tofu", "hot dog": "soy dog", "hamburger":"Veggie Burger", 
 			   "turkey":"soy", "veal":"tofu", "chicken thighs":"tofu","beef":"soy", "chicken broth":"vegetable broth", "chicken stock":"vegetable stock",
@@ -66,6 +68,5 @@ meatToVeganDict={"chicken":"tofu","steak":"portabelo mushrooms", "chorizo":"tofu
 			   "beef broth":"vegitable broth", "bacon":"smart bacon", "cheese":"fake cheese", "milk": "almond milk", "butter": "margarine",
 			   "eggs": "eggplant", "egg": "eggplant","feta cheese":"fake cheese", "mozarella cheese":"fake cheese","american cheese":"fake cheese"
 			   ,"swiss cheese":"fake cheese"}
-
 
 
