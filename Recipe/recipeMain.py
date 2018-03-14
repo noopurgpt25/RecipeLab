@@ -1,10 +1,31 @@
-import json
+import json, os, webbrowser
 from webScrape import *
 from vegitarian import *
 from makeHealthy import *
 from makeMexican import *
 from makeSimple import *
 from cookingMethod import *
+
+def showStepsInBrowser(steps):
+	# steps is a list of strings
+	filename = 'recipe.html'
+	f = open(filename,'w')
+
+	message = """<html>
+	<head></head>
+	<ul>"""
+
+	for step in steps:
+		message += "<li>" + step + "</li>"
+
+	message += """</ul>
+	</html>"""
+
+	f.write(message)
+	f.close()
+
+	#Change path to reflect file location
+	webbrowser.open('file://' + os.path.realpath(filename))
 
 # testIngredients=scrape_recipe_info(link);
 # testSteps=scrape_preperation_info(link);
@@ -65,8 +86,9 @@ while True:
 		print("Invalid input!")
 
 
-	print(testingredients)
+	# print(testingredients)
 	print(testSteps)
+	showStepsInBrowser(testSteps)
 
 # for thing in testIngredients:
 #  	print(thing)

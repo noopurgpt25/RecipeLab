@@ -1,5 +1,7 @@
 # EECS 337 Recipe Transformation Assignment
 
+Team: Scott Renshaw Conan Jennings Noopur Gupta Isaac Lee
+
 Python Version 3.6
 
 Dependencies: `requests`, `beautifulsoup4`
@@ -12,11 +14,3 @@ Our project completes the following tasks:
 2. Parses it into a recipe data representation. Our parser recognizes ingredients (name, quantity, measurement), steps, tools, and cooking methods. See `webScrape.py`.
 
 3. Transforms recipes along the vegetarian (see `vegitarian.py`), health (see `makeHealthy.py`), cuisine style (see `makeMexican.py`), and difficulty (see `makeSimple.py`) dimensions. Our transformations rely on a large set of constants (see `constants.py`) that represents pre-existing cooking knowledge.
-
-TODO:
-- ~~Parse tools~~
-- ~~Parse methods~~
-- ~~Ask user what kind of transformation~~
-- Display transformed recipe in human-friendly format
-- Improve vegetarian transformation
-- Improve difficulty transformation
