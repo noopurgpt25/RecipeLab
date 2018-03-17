@@ -1,0 +1,3 @@
+I worked on changing the Cooking methods from Fry to Bake and Bake to Fry. We do this by changing the methods in the recipe which would be suitable each tranformed cooking method and keeping in mind the change in the preparation time while doing it.
+
+github  -> noopurgpt25 
