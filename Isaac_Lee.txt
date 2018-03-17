@@ -1,0 +1,1 @@
+I worked on data scraping and setting up the input/output formats. Also made the diagrams.
